@@ -1,11 +1,14 @@
 import Card from "./components/Card";
-import { BsFillRocketTakeoffFill, BsArrowRightShort } from "react-icons/bs"
+import { BsFillRocketTakeoffFill, BsArrowRightShort, BsChevronDown } from "react-icons/bs"
 import { HiPencilAlt } from "react-icons/hi"
 import { AiOutlineArrowDown } from "react-icons/ai"
-import { useRef, useState } from "react";
 import { IoMdClose } from "react-icons/io"
 import { FiCheck } from "react-icons/fi"
+import { useRef, useState } from "react";
 import Checkbox from "react-custom-checkbox";
+import emailjs from '@emailjs/browser';
+import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css'
 
 function App() {
 
@@ -72,7 +75,7 @@ function App() {
               small={true}
 
               button={true}
-              buttonClass="bg-black text-white hover:bg-white hover:text-black mt-[250px]"
+              buttonClass="bg-black text-white hover:bg-white hover:text-black"
               buttonText="More Infos"
               icon={
                 <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
@@ -92,7 +95,7 @@ function App() {
               small={true}
 
               button={true}
-              buttonClass="bg-black text-white hover:bg-white hover:text-black mt-[250px]"
+              buttonClass="bg-black text-white hover:bg-white hover:text-black"
               buttonText="More Infos"
               icon={
                 <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
@@ -160,7 +163,7 @@ function App() {
               small={true}
 
               button={true}
-              buttonClass="bg-black text-white hover:bg-white hover:text-black mt-[380px]"
+              buttonClass="bg-black text-white hover:bg-white hover:text-black"
               buttonText="More Infos"
               icon={
                 <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
@@ -179,7 +182,7 @@ function App() {
               small={true}
 
               button={true}
-              buttonClass="bg-black text-white hover:bg-white hover:text-black mt-[380px]"
+              buttonClass="bg-black text-white hover:bg-white hover:text-black"
               buttonText="More Infos"
               icon={
                 <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
@@ -198,7 +201,7 @@ function App() {
               small={true}
 
               button={true}
-              buttonClass="bg-black text-white hover:bg-white hover:text-black mt-[380px]"
+              buttonClass="bg-black text-white hover:bg-white hover:text-black"
               buttonText="More Infos"
               icon={
                 <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
@@ -217,7 +220,7 @@ function App() {
               small={true}
 
               button={true}
-              buttonClass="bg-black text-white hover:bg-white hover:text-black mt-[380px]"
+              buttonClass="bg-black text-white hover:bg-white hover:text-black"
               buttonText="More Infos"
               icon={
                 <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
@@ -256,15 +259,38 @@ function App() {
         />
       </div>
 
+      <div className="mt-[200px] w-full max-w-[1000px] flex flex-col items-center">
+        <h1 className="text-5xl font-bold text-center" id="faq">
+          Frequently Asked Questions
+        </h1>
+
+        <h2 className="text-center text-xl font-semibold mt-5 max-w-[800px]">
+          Here are some of the hot topics of RyanFloresCompanions, most of your questions will be answered here
+        </h2>
+        
+        <div className="flex flex-col w-full gap-10">
+          <FaqAccordion question="Is this a real person?" answer="Yes and no, even though texting our AI technology is 100% artificial intelligence, calling and video calling is done with a real life person, the AI technology helps us better understand you." classes="mt-10"/>
+          <FaqAccordion question="What is an AI?" answer="AI stands for Artificial Intelligence. It means that every time you get a reply, you interact with a sophisticated neural network machine learning algorithm."/>
+          <FaqAccordion question="Is my data safe?" answer="Yes and no, even though texting our AI technology is 100% artificial intelligence, calling and video calling is done with a real life person, the AI technology helps us better understand you."/>
+          <FaqAccordion question="Are my conversations private?" answer="Your conversations are private and will stay between you and your personal companion."/>
+          <FaqAccordion question="What payments can I make?" answer="As we’re a Canadian based only companionship as of now, we take e-transfer, Credit, and PayPal."/>
+          <FaqAccordion question="Can I get a refund?" answer=" Once paid no refunds will be issued as you are paying for digital service, we recommend customers to try the Communications Bundle to have a taste of the experience."/>
+          <FaqAccordion question="Will you expand outside of Canada? If so, when?" answer="As our AI technology is limitless, our real life companions are limited. We aim to expand late 2023."/>
+          <FaqAccordion question="How does the texting package work?" answer="Once the intake form is filled out, you’ll be given a few options to interact with our AI technology which we can do via texting, iMessage, and Discord."/>
+          <FaqAccordion question="How do video calls work?" answer="You’ll be selected a personal companion who meets your needs which is documented to us from our customers' interactions with our AI texting technology. The video calls are conducted on apps such as FaceTime, Skype, and Discord."/>
+          <FaqAccordion question="Can I request for a different personal companion?" answer="Yes, if requested you can be given a different companion. We are confident that your first experience will be one that exceeds your expectations as you will feel as if you were already best friends due to our cutting edge technology which is given to our personal companions."/>
+        </div>
+      </div>
 
       <div className="fixed top-0 left-0 w-full py-5 bg-opacity-80 bg-[#dfe3e7] backdrop-blur-lg flex justify-center shadow-[0_5px_25px_-17px_rgba(0,0,0,0.3)] px-5">
         <div className="w-full max-w-[1000px] flex justify-between items-center">
           <h1 className="text-3xl font-bold">Ryan Flores</h1>
-          
+
           <div className="h-full w-fit hidden sm:flex gap-5">
-            <HeaderLink title="Services" scrollTo={() => scrollIntoView("#services")}/>
-            <HeaderLink title="About Us" scrollTo={() => scrollIntoView("#about")}/>
-            <HeaderLink title="Plans" scrollTo={() => scrollIntoView("#plans")}/>
+            <HeaderLink title="Services" scrollTo={() => scrollIntoView("#services")} />
+            <HeaderLink title="About Us" scrollTo={() => scrollIntoView("#about")} />
+            <HeaderLink title="Plans" scrollTo={() => scrollIntoView("#plans")} />
+            <HeaderLink title="Faq" scrollTo={() => scrollIntoView("#faq")} />
           </div>
 
           <div onClick={() => setOpenedForm(true)} className="bg-black text-white font-semibold rounded-lg h-full w-fit px-3 cursor-pointer flex items-center">
@@ -273,14 +299,14 @@ function App() {
         </div>
       </div>
 
-      <IntakeForm opened={openedForm} close={() => setOpenedForm(false)}/>
+      <IntakeForm opened={openedForm} close={() => setOpenedForm(false)} />
     </div>
   );
 }
 
 const HeaderLink = ({
   title = "",
-  scrollTo = () => {}
+  scrollTo = () => { }
 }) => {
   return (
     <div onClick={scrollTo} className="w-fit h-full rounded-lg hover:bg-white text-black font-semibold flex items-center px-3 transition-colors cursor-pointer">
@@ -291,40 +317,65 @@ const HeaderLink = ({
 
 const IntakeForm = ({
   opened = false,
-  close = () => {}
+  close = () => { }
 }) => {
   const buttonRef = useRef(null)
+  const formRef = useRef(null)
+  const [date, setDate] = useState(new Date());
 
-  return(
+  const sendEmail = async (e) => {
+    e.preventDefault()
+    emailjs.sendForm('service_ji77gok', 'template_bhzauxd', formRef.current, '__H3VQPtXNI809Vjx')
+      .then((result) => {
+        console.log(result.text);
+        close()
+      }, (error) => {
+        console.log(error.text);
+      });
+  }
+
+  return (
     <div className={(opened ? "flex" : "hidden") + " fixed top-0 left-0 justify-center h-screen bg-black bg-opacity-30 w-full py-20 px-5 overflow-y-scroll hidescrollbar"}>
       <div className="w-full h-fit max-w-[800px] px-[20px] py-[40px] sm:p-[40px] bg-white rounded-2xl">
         <div className="w-full flex justify-between">
           <h1 className="text-4xl font-bold">Help us getting to know you</h1>
-          <IoMdClose color="#000" size={30} className="cursor-pointer" onClick={close}/>
+          <IoMdClose color="#000" size={30} className="cursor-pointer" onClick={close} />
         </div>
         <p className="text-red-600 font-semibold mt-7">All fields are required</p>
 
-        <InputField label="Name" classes="mt-5"/>
-        <InputField label="Email" classes="mt-5"/>
-        <InputField label="Preferred # or App to text on" classes="mt-5"/>
-        <InputField label="Preferred Bundle" classes="mt-5"/>
+        <form ref={formRef} onSubmit={sendEmail}>
+          <InputField label="Name" classes="mt-5" name="name" placeholder="Ex. Dave Wats" />
+          <InputField label="Email" classes="mt-5" name="email" type="email" placeholder="Ex. example@mail.com" />
+          <InputField label="Preferred # or App to text on" classes="mt-5" name="contact" placeholder="Ex. Discord, Telegram" />
+          <div className="w-full mt-5">
+            <label htmlFor={date} className="text-lg font-semibold ml-2">Date of Birth</label>
+            <DatePicker
+              placeholderText="15/03/2002"
+              onChange={(date) => setDate(date)}
+              id="date"
+              required
+              className="appearence-none outline-0 border focus:border-[2px] border-black rounded-lg w-full pl-3 py-4 text-xl mt-3"
+            />
+          </div>
+          <InputField label="Preferred Bundle" classes="mt-5" name="preferred_bundle" />
 
-        <div className="mt-10">
-          <Checkbox
-            icon={<FiCheck color="#000" size={20}/>}
-            borderColor="#000"
-            label = "I hearby declare i read and accepted the terms of services of RyanFloresCompanions"
-            size={25}
-            className="cursor-pointer"
-            onChange={(checked) =>{
-              buttonRef.current.disabled = !checked
-            }}
-          />
+          <div className="mt-10">
+            <Checkbox
+              icon={<FiCheck color="#000" size={20} />}
+              borderColor="#000"
+              label="I hearby declare i read and accepted the terms of services of RyanFloresCompanions"
+              size={25}
+              className="cursor-pointer"
+              onChange={(checked) => {
+                buttonRef.current.disabled = !checked
+              }}
+            />
 
-          <button ref={buttonRef} className="w-full rounded-lg mt-7 border-2 border-[#0b6ef9] py-3 cursor-pointer transition-colors text-center font-semibold bg-[#0b6ef9] hover:bg-white text-white hover:text-black text-xl disabled:bg-opacity-50 disabled:border-opacity-0 disabled:hover:bg-[#0b6ef9] disabled:hover:bg-opacity-50 disabled:hover:text-white" disabled>
-            Buy Plan
-          </button>
-        </div>
+            <button ref={buttonRef} type="submit" className="w-full rounded-lg mt-7 border-2 border-[#0b6ef9] py-3 cursor-pointer disabled:cursor-not-allowed transition-colors text-center font-semibold bg-[#0b6ef9] hover:bg-white text-white hover:text-black text-xl disabled:bg-opacity-50 disabled:border-opacity-0 disabled:hover:bg-[#0b6ef9] disabled:hover:bg-opacity-50 disabled:hover:text-white" disabled>
+              Buy Plan
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   )
@@ -333,12 +384,42 @@ const IntakeForm = ({
 const InputField = ({
   label = "",
   id = "",
-  classes = ""
-}) =>{
-  return(
+  name = "",
+  classes = "",
+  placeholder = "",
+  type = "text"
+}) => {
+  return (
     <div className={"w-full " + classes}>
-      <label for={id} className="text-lg font-semibold ml-2">{label}</label>
-      <input id={id} type="text" className="appearence-none outline-0 border focus:border-[2px] border-black rounded-lg w-full pl-3 py-4 text-xl mt-3"/>
+      <label htmlFor={id} className="text-lg font-semibold ml-2">{label}</label>
+      <input placeholder={placeholder} required id={id} name={name} type={type} className="appearence-none outline-0 border focus:border-[2px] border-black rounded-lg w-full pl-3 py-4 text-xl mt-3" />
+    </div>
+  )
+}
+
+const FaqAccordion = ({
+  question = "",
+  answer = "",
+  classes = ""
+}) => {
+  const [opened, setOpened] = useState(false)
+
+  return (
+    <div className={"w-full border-b-2 border-black px-5 cursor-pointer pb-3 group " + classes} onClick={() => { setOpened(!opened) }}>
+      <div className="w-full flex items-center justify-between pt-3">
+        <p className="font-semibold text-2xl">{question}</p>
+        <div className={!opened && "transition-transform duration-700 group-hover:rotate-[180deg]"}>
+          {
+            !opened ?
+              <BsChevronDown size={20} color="#000"/>
+              :
+              <BsChevronDown size={20} color="#000" className="rotate-[180deg]"/>
+          }
+        </div>
+      </div>
+      <div className={"w-full overflow-y-hidden transition-[max-height] mt-2 text-xl " + (opened ? "max-h-[500px]" : "max-h-0")}>
+        {answer}
+      </div>
     </div>
   )
 }

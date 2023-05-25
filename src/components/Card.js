@@ -25,7 +25,7 @@ const Card = ({
             </p>
             {
                 button&&
-                <div onClick={buttonAction != null ? buttonAction : () => setOpen(true)} className={"py-2 px-5 rounded-full w-fit font-semibold text-lg flex items-center cursor-pointer group transition-colors " + buttonClass}>
+                <div onClick={buttonAction != null ? buttonAction : () => setOpen(true)} className={"py-2 px-5 rounded-full w-fit font-semibold text-lg flex items-center cursor-pointer group transition-colors " + buttonClass + (small ? " absolute bottom-[40px] left-[40px]" : "")}>
                     {buttonText}
                     {
                         icon&&
