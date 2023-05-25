@@ -1,9 +1,15 @@
 import Card from "./components/Card";
-import { BsFillRocketTakeoffFill } from "react-icons/bs"
+import { BsFillRocketTakeoffFill, BsArrowRightShort } from "react-icons/bs"
 import { HiPencilAlt } from "react-icons/hi"
 import { AiOutlineArrowDown } from "react-icons/ai"
+import { useRef, useState } from "react";
+import { IoMdClose } from "react-icons/io"
+import { FiCheck } from "react-icons/fi"
+import Checkbox from "react-custom-checkbox";
 
 function App() {
+
+  const [openedForm, setOpenedForm] = useState(false)
 
   const scrollIntoView = (identifier) => document.querySelector(identifier).scrollIntoView({ behavior: "smooth" })
 
@@ -44,6 +50,17 @@ function App() {
           title="Personalized Conversations"
           subtitle="Engage in meaningful conversations with our AI companions tailored to your interests, and emotional needs. 
           They are designed to provide empathetic responses and offer a listening ear whenever you need someone to talk."
+
+          button={true}
+          buttonClass="bg-[#0b6ef9] text-white hover:bg-white hover:text-black mt-10"
+          buttonText="More Infos"
+          icon={
+            <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
+          }
+
+          infoPanel={true}
+          panelClass="bg-[#ccdbea] text-black text-2xl overflow-y-scroll hidescrollbar"
+          panelText="Engage in meaningful conversations with our AI companions that are tailored to your preferences, interests, and emotional needs. Our AI companions are designed to provide empathetic responses and offer a listening ear whenever you need someone to talk to which is then documented prior to video calling, to your own real life companion who will understand your emotions, needs, issues when entering the call."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
@@ -53,6 +70,17 @@ function App() {
               title="Emotional Support"
               subtitle="Feeling down? Our AI companions are trained to provide emotional support, offering words of encouragement, motivation, and even virtual hugs."
               small={true}
+
+              button={true}
+              buttonClass="bg-black text-white hover:bg-white hover:text-black mt-[250px]"
+              buttonText="More Infos"
+              icon={
+                <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
+              }
+
+              infoPanel={true}
+              panelClass="bg-[#323c46] text-2xl overflow-y-scroll hidescrollbar"
+              panelText="Feeling down? Our AI companions are trained to provide emotional support, offering words of encouragement, motivation, and even virtual hugs. They are always ready to lift your spirits and brighten your day."
             />
           </div>
 
@@ -62,6 +90,17 @@ function App() {
               title="24/7 Availability"
               subtitle="Loneliness knows no time boundaries, and neither do our AI companions. They are available round the clock, ready to keep you company whenever you need them."
               small={true}
+
+              button={true}
+              buttonClass="bg-black text-white hover:bg-white hover:text-black mt-[250px]"
+              buttonText="More Infos"
+              icon={
+                <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
+              }
+
+              infoPanel={true}
+              panelClass="bg-[#323c46] text-2xl overflow-y-scroll hidescrollbar"
+              panelText="Feeling down? Our AI companions are trained to provide emotional support, offering words of encouragement, motivation, and even virtual hugs. They are always ready to lift your spirits and brighten your day."
             />
           </div>
         </div>
@@ -117,36 +156,76 @@ function App() {
           <div className="col-span-1">
             <Card
               classes="mt-16 bg-[url('./media/perc.webp')] bg-right bg-cover bg-center text-white"
-              title="Privacy and Security"
-              subtitle="We understand the importance of privacy. Rest assured that all your interactions with our AI and human companions are kept strictly confidential and securely encrypted"
+              title="Communication Bundle"
               small={true}
+
+              button={true}
+              buttonClass="bg-black text-white hover:bg-white hover:text-black mt-[380px]"
+              buttonText="More Infos"
+              icon={
+                <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
+              }
+
+              infoPanel={true}
+              panelClass="bg-[#323c46] text-2xl overflow-y-scroll hidescrollbar"
+              panelText="Includes: 24 hours texting with documented notes"
             />
           </div>
 
           <div className="col-span-1">
             <Card
               classes="mt-16 bg-[url('./media/perc.webp')] bg-right bg-cover bg-center text-white"
-              title="Raw Connection"
-              subtitle="Our technology translates your needs to a real life companion making your video calling experience more genuine and comfortable at all times."
+              title="Day Bundle"
               small={true}
+
+              button={true}
+              buttonClass="bg-black text-white hover:bg-white hover:text-black mt-[380px]"
+              buttonText="More Infos"
+              icon={
+                <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
+              }
+
+              infoPanel={true}
+              panelClass="bg-[#323c46] text-2xl overflow-y-scroll hidescrollbar"
+              panelText="Includes: 2 days texting with documented notes"
             />
           </div>
 
           <div className="col-span-1">
             <Card
               classes="mt-3 bg-[url('./media/perc.webp')] bg-right bg-cover bg-center text-white"
-              title="Privacy and Security"
-              subtitle="We understand the importance of privacy. Rest assured that all your interactions with our AI and human companions are kept strictly confidential and securely encrypted"
+              title="Video Bundle"
               small={true}
+
+              button={true}
+              buttonClass="bg-black text-white hover:bg-white hover:text-black mt-[380px]"
+              buttonText="More Infos"
+              icon={
+                <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
+              }
+
+              infoPanel={true}
+              panelClass="bg-[#323c46] text-2xl overflow-y-scroll hidescrollbar"
+              panelText="Includes: 5 hours texting with documented notes, and 1 hour companionship video call"
             />
           </div>
 
           <div className="col-span-1">
             <Card
               classes="mt-3 bg-[url('./media/perc.webp')] bg-right bg-cover bg-center text-white"
-              title="Raw Connection"
-              subtitle="Our technology translates your needs to a real life companion making your video calling experience more genuine and comfortable at all times."
+              title="2 Day Video Bundle"
               small={true}
+
+              button={true}
+              buttonClass="bg-black text-white hover:bg-white hover:text-black mt-[380px]"
+              buttonText="More Infos"
+              icon={
+                <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
+              }
+
+              infoPanel={true}
+              panelClass="bg-[#323c46] text-2xl overflow-y-scroll hidescrollbar"
+              panelText="2 days texting with documented notes, and "
             />
           </div>
         </div>
@@ -168,11 +247,12 @@ function App() {
           title="Sign up now and start"
           subtitle="Embark on a new chapter of companionship. Your information will be elaborated and processed by our AI companions to create the best company you could ever ask for!"
           button={true}
-          buttonClass="bg-[#0b6ef9] text-white hover:bg-white hover:text-black"
+          buttonClass="bg-[#0b6ef9] text-white hover:bg-white hover:text-black mt-10"
           buttonText="Fill Intake Form"
           icon={
             <HiPencilAlt size={20} className="ml-5 text-white fill-current group-hover:text-black transition-colors" />
           }
+          buttonAction={() => setOpenedForm(true)}
         />
       </div>
 
@@ -187,11 +267,13 @@ function App() {
             <HeaderLink title="Plans" scrollTo={() => scrollIntoView("#plans")}/>
           </div>
 
-          <div className="bg-black text-white font-semibold rounded-lg h-full w-fit px-3 cursor-pointer flex items-center">
+          <div onClick={() => setOpenedForm(true)} className="bg-black text-white font-semibold rounded-lg h-full w-fit px-3 cursor-pointer flex items-center">
             Sign Up
           </div>
         </div>
       </div>
+
+      <IntakeForm opened={openedForm} close={() => setOpenedForm(false)}/>
     </div>
   );
 }
@@ -203,6 +285,60 @@ const HeaderLink = ({
   return (
     <div onClick={scrollTo} className="w-fit h-full rounded-lg hover:bg-white text-black font-semibold flex items-center px-3 transition-colors cursor-pointer">
       {title}
+    </div>
+  )
+}
+
+const IntakeForm = ({
+  opened = false,
+  close = () => {}
+}) => {
+  const buttonRef = useRef(null)
+
+  return(
+    <div className={(opened ? "flex" : "hidden") + " fixed top-0 left-0 justify-center h-screen bg-black bg-opacity-30 w-full py-20 px-5 overflow-y-scroll hidescrollbar"}>
+      <div className="w-full h-fit max-w-[800px] px-[20px] py-[40px] sm:p-[40px] bg-white rounded-2xl">
+        <div className="w-full flex justify-between">
+          <h1 className="text-4xl font-bold">Help us getting to know you</h1>
+          <IoMdClose color="#000" size={30} className="cursor-pointer" onClick={close}/>
+        </div>
+        <p className="text-red-600 font-semibold mt-7">All fields are required</p>
+
+        <InputField label="Name" classes="mt-5"/>
+        <InputField label="Email" classes="mt-5"/>
+        <InputField label="Preferred # or App to text on" classes="mt-5"/>
+        <InputField label="Preferred Bundle" classes="mt-5"/>
+
+        <div className="mt-10">
+          <Checkbox
+            icon={<FiCheck color="#000" size={20}/>}
+            borderColor="#000"
+            label = "I hearby declare i read and accepted the terms of services of RyanFloresCompanions"
+            size={25}
+            className="cursor-pointer"
+            onChange={(checked) =>{
+              buttonRef.current.disabled = !checked
+            }}
+          />
+
+          <button ref={buttonRef} className="w-full rounded-lg mt-7 border-2 border-[#0b6ef9] py-3 cursor-pointer transition-colors text-center font-semibold bg-[#0b6ef9] hover:bg-white text-white hover:text-black text-xl disabled:bg-opacity-50 disabled:border-opacity-0 disabled:hover:bg-[#0b6ef9] disabled:hover:bg-opacity-50 disabled:hover:text-white" disabled>
+            Buy Plan
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const InputField = ({
+  label = "",
+  id = "",
+  classes = ""
+}) =>{
+  return(
+    <div className={"w-full " + classes}>
+      <label for={id} className="text-lg font-semibold ml-2">{label}</label>
+      <input id={id} type="text" className="appearence-none outline-0 border focus:border-[2px] border-black rounded-lg w-full pl-3 py-4 text-xl mt-3"/>
     </div>
   )
 }
