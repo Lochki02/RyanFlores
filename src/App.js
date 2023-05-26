@@ -158,7 +158,7 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full" id="plans">
           <div className="col-span-1">
             <Card
-              classes="mt-16 bg-[url('./media/perc.webp')] bg-right bg-cover bg-center text-white"
+              classes="mt-16 bg-[url('./media/PersonBG.png')] bg-right bg-cover bg-center text-white"
               title="Communication Bundle"
               small={true}
 
@@ -196,26 +196,26 @@ function App() {
 
           <div className="col-span-1">
             <Card
-              classes="mt-3 bg-[url('./media/perc.webp')] bg-right bg-cover bg-center text-white"
+              classes="mt-3 bg-[url('./media/CamBG.png')] bg-right bg-cover bg-center text-black"
               title="Video Bundle"
               small={true}
 
               button={true}
-              buttonClass="bg-black text-white hover:bg-white hover:text-black"
+              buttonClass="bg-[#ece3aa] text-black hover:bg-black hover:text-white"
               buttonText="More Infos"
               icon={
-                <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
+                <BsArrowRightShort size={25} className="ml-3 text-black fill-current group-hover:text-white transition-colors" />
               }
 
               infoPanel={true}
-              panelClass="bg-[#323c46] text-2xl overflow-y-scroll hidescrollbar"
+              panelClass="bg-[#ece3aa] text-2xl overflow-y-scroll hidescrollbar"
               panelText="Includes: 5 hours texting with documented notes, and 1 hour companionship video call"
             />
           </div>
 
           <div className="col-span-1">
             <Card
-              classes="mt-3 bg-[url('./media/perc.webp')] bg-right bg-cover bg-center text-white"
+              classes="mt-3 bg-[url('./media/MedalBG.png')] bg-right bg-cover bg-center text-white"
               title="2 Day Video Bundle"
               small={true}
 
