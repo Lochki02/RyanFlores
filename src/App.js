@@ -69,7 +69,7 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
           <div className="col-span-1">
             <Card
-              classes="mt-7 bg-[url('./media/perc.webp')] bg-right bg-cover bg-center text-white"
+              classes="mt-7 bg-[url('./media/HeartBG.png')] bg-right bg-cover bg-center text-white"
               title="Emotional Support"
               subtitle="Feeling down? Our AI companions are trained to provide emotional support, offering words of encouragement, motivation, and even virtual hugs."
               small={true}
@@ -89,20 +89,20 @@ function App() {
 
           <div className="col-span-1">
             <Card
-              classes="mt-7 bg-[url('./media/perc.webp')] bg-right bg-cover bg-center text-white"
+              classes="mt-7 bg-[url('./media/StairsBG.png')] bg-right bg-cover bg-center text-white"
               title="24/7 Availability"
               subtitle="Loneliness knows no time boundaries, and neither do our AI companions. They are available round the clock, ready to keep you company whenever you need them."
               small={true}
 
               button={true}
-              buttonClass="bg-black text-white hover:bg-white hover:text-black"
+              buttonClass="bg-[#7aadd5] text-white hover:bg-white hover:text-black"
               buttonText="More Infos"
               icon={
                 <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
               }
 
               infoPanel={true}
-              panelClass="bg-[#323c46] text-2xl overflow-y-scroll hidescrollbar"
+              panelClass="bg-[#90f1db] text-2xl overflow-y-scroll hidescrollbar text-black"
               panelText="Feeling down? Our AI companions are trained to provide emotional support, offering words of encouragement, motivation, and even virtual hugs. They are always ready to lift your spirits and brighten your day."
             />
           </div>
@@ -120,7 +120,7 @@ function App() {
 
         <Card
           id="about"
-          classes="mt-16 bg-[url('./media/world.webp')] bg-right bg-center bg-cover text-white"
+          classes="mt-16 bg-[url('./media/BrainBG.png')] bg-right bg-center bg-cover text-white"
           title="Cutting-Edge AI Technology"
           subtitle="Our AI companions are powered by state-of-the-art artificial intelligence technology, ensuring highly realistic and engaging interactions."
         />
@@ -128,7 +128,7 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
           <div className="col-span-1">
             <Card
-              classes="mt-7 bg-[url('./media/perc.webp')] bg-right bg-cover bg-center text-white"
+              classes="mt-7 bg-[url('./media/BookBG.png')] bg-right bg-cover bg-center text-white"
               title="Privacy and Security"
               subtitle="We understand the importance of privacy. Rest assured that all your interactions with our AI and human companions are kept strictly confidential and securely encrypted"
               small={true}
@@ -137,7 +137,7 @@ function App() {
 
           <div className="col-span-1">
             <Card
-              classes="mt-7 bg-[url('./media/perc.webp')] bg-right bg-cover bg-center text-white"
+              classes="mt-7 bg-[url('./media/RawBG.png')] bg-right bg-cover bg-center text-white"
               title="Raw Connection"
               subtitle="Our technology translates your needs to a real life companion making your video calling experience more genuine and comfortable at all times."
               small={true}
@@ -177,19 +177,19 @@ function App() {
 
           <div className="col-span-1">
             <Card
-              classes="mt-16 bg-[url('./media/perc.webp')] bg-right bg-cover bg-center text-white"
+              classes="mt-16 bg-[url('./media/SunBG.png')] bg-right bg-cover bg-center text-black"
               title="Day Bundle"
               small={true}
 
               button={true}
-              buttonClass="bg-black text-white hover:bg-white hover:text-black"
+              buttonClass="bg-black text-white hover:bg-[#fcd551] hover:text-black"
               buttonText="More Infos"
               icon={
                 <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
               }
 
               infoPanel={true}
-              panelClass="bg-[#323c46] text-2xl overflow-y-scroll hidescrollbar"
+              panelClass="bg-[#f0cd6a] text-2xl overflow-y-scroll hidescrollbar"
               panelText="Includes: 2 days texting with documented notes"
             />
           </div>
@@ -237,7 +237,6 @@ function App() {
       <div className="mt-[200px] w-full max-w-[1000px] flex flex-col items-center">
         <h1 className="text-5xl font-bold text-center flex items-center">
           Start your jurney with us!
-          <BsFillRocketTakeoffFill size={30} color="#eb5c59" className="mt-2 ml-3" />
         </h1>
 
         <h2 className="text-center text-xl font-semibold mt-5 max-w-[800px]">
@@ -246,14 +245,14 @@ function App() {
 
         <Card
           id="formcontainer"
-          classes="mt-16 bg-[url('./media/world.webp')] bg-right bg-center bg-cover text-white"
+          classes="mt-16 bg-[url('./media/RocketBG.png')] bg-right bg-center bg-cover text-black"
           title="Sign up now and start"
           subtitle="Embark on a new chapter of companionship. Your information will be elaborated and processed by our AI companions to create the best company you could ever ask for!"
           button={true}
-          buttonClass="bg-[#0b6ef9] text-white hover:bg-white hover:text-black mt-10"
+          buttonClass="bg-[#fbd624] text-black hover:bg-white mt-10"
           buttonText="Fill Intake Form"
           icon={
-            <HiPencilAlt size={20} className="ml-5 text-white fill-current group-hover:text-black transition-colors" />
+            <HiPencilAlt size={20} className="ml-5 text-black fill-current transition-colors" />
           }
           buttonAction={() => setOpenedForm(true)}
         />
