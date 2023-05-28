@@ -111,7 +111,7 @@ function App() {
 
       <div className="mt-[200px] w-full max-w-[1000px] flex flex-col items-center">
         <h1 className="text-5xl font-bold text-center">
-          Why Ryan Flores?
+          Why Rayan Flores?
         </h1>
 
         <h2 className="text-center text-xl font-semibold mt-5 max-w-[800px]">
@@ -264,7 +264,7 @@ function App() {
         </h1>
 
         <h2 className="text-center text-xl font-semibold mt-5 max-w-[800px]">
-          Here are some of the hot topics of RyanFloresCompanions, most of your questions will be answered here
+          Here are some of the hot topics of RayanFloresCompanions, most of your questions will be answered here
         </h2>
         
         <div className="flex flex-col w-full gap-10">
@@ -283,7 +283,7 @@ function App() {
 
       <div className="fixed top-0 left-0 w-full py-5 bg-opacity-80 bg-[#dfe3e7] backdrop-blur-lg flex justify-center shadow-[0_5px_25px_-17px_rgba(0,0,0,0.3)] px-5">
         <div className="w-full max-w-[1000px] flex justify-between items-center">
-          <h1 className="text-3xl font-bold">Ryan Flores</h1>
+          <h1 className="text-3xl font-bold">Rayan Flores</h1>
 
           <div className="h-full w-fit hidden sm:flex gap-5">
             <HeaderLink title="Services" scrollTo={() => scrollIntoView("#services")} />
@@ -324,7 +324,7 @@ const IntakeForm = ({
 
   const sendEmail = async (e) => {
     e.preventDefault()
-    emailjs.sendForm('service_ji77gok', 'template_bhzauxd', formRef.current, '__H3VQPtXNI809Vjx')
+    emailjs.sendForm('service_g24acu2', 'template_wy1tnk1', formRef.current, 'rIv9EMPFKXekfxr2J')
       .then((result) => {
         console.log(result.text);
         close()
@@ -350,6 +350,7 @@ const IntakeForm = ({
             <label htmlFor={date} className="text-lg font-semibold ml-2">Date of Birth</label>
             <DatePicker
               placeholderText="15/03/2002"
+              selected={date}
               onChange={(date) => setDate(date)}
               id="date"
               required
@@ -362,7 +363,7 @@ const IntakeForm = ({
             <Checkbox
               icon={<FiCheck color="#000" size={20} />}
               borderColor="#000"
-              label="I hearby declare i read and accepted the terms of services of RyanFloresCompanions"
+              label="I hearby declare i read and accepted the terms of services of RayanFloresCompanions"
               size={25}
               className="cursor-pointer"
               onChange={(checked) => {
