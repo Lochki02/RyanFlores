@@ -49,7 +49,7 @@ const Modal = ({
                         step == 3 && !loading &&
                         <div>
                             <p className='text-2xl font-semibold'>
-                                You’ll be contacted with our full selection of prices, membership plans, and other options that will meet your needs, below is some of our top selling plans.
+                                Thank you, a consultant will contact you within 1-3 business days
                             </p>
                         </div>
                     }
