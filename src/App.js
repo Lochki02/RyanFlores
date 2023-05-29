@@ -84,7 +84,7 @@ function App() {
 
             <div className="col-span-1">
               <Card
-                classes="mt-3 bg-[url('./media/StairsBG.png')] bg-right bg-cover bg-center text-white"
+                classes="mt-3 bg-[url('./media/questionBG.png')] bg-right bg-cover bg-center text-white"
                 title="Intelligent Problem-Solving"
                 subtitle="Need help finding a solution to a problem? Our AI companions are equipped with vast knowledge and problem-solving capabilities."
                 small={true}
@@ -93,7 +93,7 @@ function App() {
 
             <div className="col-span-1">
               <Card
-                classes="mt-3 bg-[url('./media/StairsBG.png')] bg-right bg-cover bg-center text-white"
+                classes="mt-3 bg-[url('./media/handleBG.png')] bg-right bg-cover bg-center text-black"
                 title="Personal Development"
                 subtitle="Our AI companions are not just here to keep you company; they are also committed to helping you grow and develop as an individual."
                 small={true}
@@ -161,7 +161,7 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full" id="plans">
             <div className="col-span-1">
               <Card
-                classes="mt-16 bg-[url('./media/BrainBG.png')] bg-right bg-cover bg-center text-white"
+                classes="mt-16 bg-[url('./media/dollarBG.png')] bg-right bg-cover bg-center text-white"
                 title="Free Trial"
                 small={true}
               />
