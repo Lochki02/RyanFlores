@@ -164,6 +164,17 @@ function App() {
                 classes="mt-16 bg-[url('./media/dollarBG.png')] bg-right bg-cover bg-center text-white"
                 title="Free Trial"
                 small={true}
+
+                button={true}
+                buttonClass="bg-black text-white hover:bg-white hover:text-black"
+                buttonText="More Infos"
+                icon={
+                  <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
+                }
+
+                infoPanel={true}
+                panelClass="bg-[#b596e0] text-2xl overflow-y-scroll hidescrollbar"
+                panelText="24 hours texting with documented notes"
               />
             </div>
 
@@ -182,7 +193,7 @@ function App() {
 
                 infoPanel={true}
                 panelClass="bg-[#323c46] text-2xl overflow-y-scroll hidescrollbar"
-                panelText="Includes: 24 hours texting with documented notes"
+                panelText="24 hours texting with documented notes"
               />
             </div>
 
@@ -201,7 +212,7 @@ function App() {
 
                 infoPanel={true}
                 panelClass="bg-[#f0cd6a] text-2xl overflow-y-scroll hidescrollbar"
-                panelText="Includes: 2 days texting with documented notes"
+                panelText="24 hours texting with documented notes with 1 hour companionship video call session"
               />
             </div>
 
@@ -220,14 +231,14 @@ function App() {
 
                 infoPanel={true}
                 panelClass="bg-[#ece3aa] text-2xl overflow-y-scroll hidescrollbar"
-                panelText="Includes: 5 hours texting with documented notes, and 1 hour companionship video call"
+                panelText="3 hour long companionship video call session"
               />
             </div>
 
             <div className="col-span-1">
               <Card
                 classes="mt-3 bg-[url('./media/MedalBG.png')] bg-right bg-cover bg-center text-white"
-                title="2 Day Video Bundle"
+                title="3 Day Video Bundle"
                 small={true}
 
                 button={true}
@@ -239,7 +250,26 @@ function App() {
 
                 infoPanel={true}
                 panelClass="bg-[#323c46] text-2xl overflow-y-scroll hidescrollbar"
-                panelText="2 days texting with documented notes, and "
+                panelText="72 hours texting with documented notes with 1 hour per day companionship video call session"
+              />
+            </div>
+
+            <div className="col-span-1">
+              <Card
+                classes="mt-3 bg-[url('./media/crownBG.png')] bg-right bg-cover bg-center text-black"
+                title="Elite Bundle"
+                small={true}
+
+                button={true}
+                buttonClass="bg-black text-white hover:bg-white hover:text-black"
+                buttonText="More Infos"
+                icon={
+                  <BsArrowRightShort size={25} className="ml-3 text-white fill-current group-hover:text-black transition-colors" />
+                }
+
+                infoPanel={true}
+                panelClass="bg-[#1ec98b] text-2xl overflow-y-scroll hidescrollbar"
+                panelText="1 month of unlimited texting with daily 1 hour companionship video call sessions"
               />
             </div>
           </div>
@@ -247,7 +277,7 @@ function App() {
 
         <div className="mt-[200px] w-full max-w-[1000px] flex flex-col items-center">
           <h1 className="text-5xl font-bold text-center flex items-center">
-            Start your jurney with us!
+            Start your journey with us!
           </h1>
 
           <h2 className="text-center text-xl font-semibold mt-5 max-w-[800px]">
@@ -257,7 +287,7 @@ function App() {
           <Card
             id="formcontainer"
             classes="mt-16 bg-[url('./media/RocketBG.png')] bg-right bg-center bg-cover text-black"
-            title="Sign up now and start"
+            title="Sign up now and start your free trial today"
             subtitle="Embark on a new chapter of companionship. Your information will be elaborated and processed by our AI companions to create the best company you could ever ask for!"
             button={true}
             buttonClass="bg-[#fbd624] text-black hover:bg-white mt-10"
@@ -281,7 +311,7 @@ function App() {
           <div className="flex flex-col w-full gap-10">
             <FaqAccordion question="Is this a real person?" answer="Yes and no, even though texting our AI technology is 100% artificial intelligence, calling and video calling is done with a real life person, the AI technology helps us better understand you." classes="mt-10" />
             <FaqAccordion question="What is an AI?" answer="AI stands for Artificial Intelligence. It means that every time you get a reply, you interact with a sophisticated neural network machine learning algorithm." />
-            <FaqAccordion question="Is my data safe?" answer="Yes and no, even though texting our AI technology is 100% artificial intelligence, calling and video calling is done with a real life person, the AI technology helps us better understand you." />
+            <FaqAccordion question="Is my data safe?" answer="Your data is completely safe with us. We don’t share it with anyone and don’t use it to run ads. We don’t use emails or social media info to learn about our customers." />
             <FaqAccordion question="Are my conversations private?" answer="Your conversations are private and will stay between you and your personal companion." />
             <FaqAccordion question="What payments can I make?" answer="As we’re a Canadian based only companionship as of now, we take e-transfer, Credit, and PayPal." />
             <FaqAccordion question="Can I get a refund?" answer=" Once paid no refunds will be issued as you are paying for digital service, we recommend customers to try the Communications Bundle to have a taste of the experience." />
@@ -296,11 +326,12 @@ function App() {
           <div className="w-full max-w-[1000px] flex justify-between items-center">
             <h1 className="text-3xl font-bold">Rayan Flores</h1>
 
-            <div className="h-full w-fit hidden sm:flex gap-5">
+            <div className="h-full w-fit hidden sp:flex gap-5">
               <HeaderLink title="Services" scrollTo={() => scrollIntoView("#services")} />
               <HeaderLink title="About Us" scrollTo={() => scrollIntoView("#about")} />
               <HeaderLink title="Plans" scrollTo={() => scrollIntoView("#plans")} />
               <HeaderLink title="FAQ" scrollTo={() => scrollIntoView("#faq")} />
+              <HeaderLink title="Contacts" scrollTo={() => scrollIntoView("#footer")} />
             </div>
 
             <div onClick={() => setOpenedForm(true)} className="bg-black text-white font-semibold rounded-lg h-full w-fit px-3 cursor-pointer flex items-center">
@@ -312,8 +343,8 @@ function App() {
         <IntakeForm opened={openedForm} close={() => setOpenedForm(false)} />
       </div>
 
-      <div className="w-full py-10 flex justify-center text-white font-semibold text-xl bg-black">
-        Contact: theflores321@gmail.com
+      <div id="footer" className="w-full py-10 flex justify-center text-white font-semibold text-xl bg-black">
+        For any questions or inquiries please contact us at theflores321@gmail.com
       </div>
     </>
   );
