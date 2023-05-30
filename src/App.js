@@ -174,7 +174,7 @@ function App() {
 
                 infoPanel={true}
                 panelClass="bg-[#b596e0] text-2xl overflow-y-scroll hidescrollbar"
-                panelText="24 hours texting with documented notes"
+                panelText="1 hour free texting with documented notes, this will help assist us in deciding on what we believe is the best plan to meet your needs"
               />
             </div>
 
