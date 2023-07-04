@@ -21,7 +21,7 @@ function App() {
           </h1>
 
           <h2 className="text-xl font-semibold text-center leading-[36px] mt-10">
-            Are you looking for someone who understands you, supports you, and is always there for you? <br /> Look no furtherthan Rayan Flores Companionship
+            Are you looking for someone who understands you, supports you, and is always there for you? <br /> Look no further than Rayan Flores Companionship
           </h2>
         </div>
 
