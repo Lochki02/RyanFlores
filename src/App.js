@@ -21,7 +21,7 @@ function App() {
           </h1>
 
           <h2 className="text-xl font-semibold text-center leading-[36px] mt-10">
-            Are you looking for someone who understands you, supports you, and is always there for you? <br /> Look no further than Rayan Flores Companionship
+            Are you looking for someone who understands you, supports you, and is always there for you? <br /> Look no further than Rayan Fleurs Companionship
           </h2>
         </div>
 
@@ -114,11 +114,11 @@ function App() {
 
         <div className="mt-[200px] w-full max-w-[1000px] flex flex-col items-center">
           <h1 className="text-5xl font-bold text-center">
-            Why Rayan Flores?
+            Why Rayan Fleurs?
           </h1>
 
           <h2 className="text-center text-xl font-semibold mt-5 max-w-[800px]">
-            Start Your Journey with Rayan Flores Companionship Today! Discover the power of AI technology to uplift your spirits, engage in meaningful conversations.
+            Start Your Journey with Rayan Fleurs Companionship Today! Discover the power of AI technology to uplift your spirits, engage in meaningful conversations.
           </h2>
 
           <Card
@@ -305,7 +305,7 @@ function App() {
           </h1>
 
           <h2 className="text-center text-xl font-semibold mt-5 max-w-[800px]">
-            Here are some of the hot topics of RayanFloresCompanions, most of your questions will be answered here
+            Here are some of the hot topics of RayanFleursCompanions, most of your questions will be answered here
           </h2>
 
           <div className="flex flex-col w-full gap-10">
@@ -324,7 +324,7 @@ function App() {
 
         <div className="fixed top-0 left-0 w-full py-5 bg-opacity-80 bg-[#dfe3e7] backdrop-blur-lg flex justify-center shadow-[0_5px_25px_-17px_rgba(0,0,0,0.3)] px-5">
           <div className="w-full max-w-[1000px] flex justify-between items-center">
-            <h1 className="text-3xl font-bold">Rayan Flores</h1>
+            <h1 className="text-3xl font-bold">Rayan Fleurs</h1>
 
             <div className="h-full w-fit hidden sp:flex gap-5">
               <HeaderLink title="Services" scrollTo={() => scrollIntoView("#services")} />
@@ -344,7 +344,7 @@ function App() {
       </div>
 
       <div id="footer" className="w-full py-10 flex justify-center text-white font-semibold text-xl bg-black">
-        For any questions or inquiries please contact us at theflores321@gmail.com
+        For any questions or inquiries please contact us at theFleurs321@gmail.com
       </div>
     </>
   );

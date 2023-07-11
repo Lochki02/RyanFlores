@@ -182,7 +182,7 @@ const TermsOfService = ({
             <div className='w-full h-[400px] mt-7 overflow-y-scroll hidescrollbar'>
                 Terms and Conditions: AI Companionship Service<br /><br />
 
-                These Terms and Conditions govern the use of the AI Companionship Service provided by Rayan Flores Companionship, a company registered under the laws of Canada
+                These Terms and Conditions govern the use of the AI Companionship Service provided by Rayan Fleurs Companionship, a company registered under the laws of Canada
                 <br /><br />
                 By accessing or using the AI Companionship Service provided by the Company, you agree to be bound by this Agreement. If you do not agree to these terms, please do not use the service.
                 <br /><br />
