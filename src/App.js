@@ -344,7 +344,7 @@ function App() {
       </div>
 
       <div id="footer" className="w-full py-10 flex justify-center text-white font-semibold text-xl bg-black">
-        For any questions or inquiries please contact us at theFleurs321@gmail.com
+        For any questions or inquiries please contact us at fleursrayan@gmail.com
       </div>
     </>
   );
