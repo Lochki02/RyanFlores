@@ -5,6 +5,7 @@ import { HiPencilAlt } from "react-icons/hi"
 import { AiOutlineArrowDown } from "react-icons/ai"
 import { useRef, useState } from "react";
 import 'react-datepicker/dist/react-datepicker.css'
+import Prova from "./components/Prova";
 
 function App() {
 
@@ -182,6 +183,7 @@ function App() {
               <Card
                 classes="mt-16 bg-[url('./media/PersonBG.png')] bg-right bg-cover bg-center text-white"
                 title="Communication Bundle"
+                cost="$105"
                 small={true}
 
                 button={true}
@@ -201,6 +203,7 @@ function App() {
               <Card
                 classes="mt-3 bg-[url('./media/SunBG.png')] bg-right bg-cover bg-center text-black"
                 title="Day Bundle"
+                cost="$140"
                 small={true}
 
                 button={true}
@@ -220,6 +223,7 @@ function App() {
               <Card
                 classes="mt-3 bg-[url('./media/CamBG.png')] bg-right bg-cover bg-center text-black"
                 title="Video Bundle"
+                cost="$175"
                 small={true}
 
                 button={true}
@@ -239,6 +243,7 @@ function App() {
               <Card
                 classes="mt-3 bg-[url('./media/MedalBG.png')] bg-right bg-cover bg-center text-white"
                 title="3 Day Video Bundle"
+                cost="$210"
                 small={true}
 
                 button={true}
@@ -258,6 +263,7 @@ function App() {
               <Card
                 classes="mt-3 bg-[url('./media/crownBG.png')] bg-right bg-cover bg-center text-black"
                 title="Elite Bundle"
+                cost="$399"
                 small={true}
 
                 button={true}
@@ -272,6 +278,10 @@ function App() {
                 panelText="1 month of unlimited texting with daily 1 hour companionship video call sessions"
               />
             </div>
+
+            <p className="col-span-2 text-center text-2xl mt-5">
+              Contact us to see further plans for addiotional pricings
+            </p>
           </div>
         </div>
 
@@ -331,7 +341,7 @@ function App() {
               <HeaderLink title="About Us" scrollTo={() => scrollIntoView("#about")} />
               <HeaderLink title="Plans" scrollTo={() => scrollIntoView("#plans")} />
               <HeaderLink title="FAQ" scrollTo={() => scrollIntoView("#faq")} />
-              <HeaderLink title="Contacts" scrollTo={() => scrollIntoView("#footer")} />
+              <HeaderLink title="Contact" scrollTo={() => scrollIntoView("#footer")} />
             </div>
 
             <div onClick={() => setOpenedForm(true)} className="bg-black text-white font-semibold rounded-lg h-full w-fit px-3 cursor-pointer flex items-center">

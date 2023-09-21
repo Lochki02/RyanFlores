@@ -13,13 +13,20 @@ const Card = ({
     id = "",
     infoPanel = false,
     panelClass = "",
-    panelText = ""
+    panelText = "",
+    cost = ""
 }) =>{
     const [openedPanel, setOpen] = useState(false)
 
     return(
         <div id={id} className={classes + " w-full rounded-3xl flex flex-col p-[40px] overflow-hidden relative" + (!small ? " justify-center h-[524px]" : " h-[579px]")}>
             <h2 className="text-[35px] font-bold mb-2">{title}</h2>
+            {
+                cost != "" &&
+                <h3 className="text-[35px] font-semibold mb-2">
+                    {cost}
+                </h3>
+            }
             <p className="mt-2 text-lg font-semibold max-w-[450px]">
                 {subtitle}
             </p>

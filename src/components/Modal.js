@@ -93,6 +93,7 @@ const IntakeForm = ({
         data.push([inputs["expectations"].name, inputs["expectations"].value])
         data.push([inputs["contact"].name, inputs["contact"].value])
         data.push([inputs["companion"].name, inputs["companion"].value])
+        data.push([inputs["preferred_bundle"].name, inputs["preferred_bundle"].value])
 
         setData(data)
         action()
@@ -103,9 +104,9 @@ const IntakeForm = ({
             <p className="text-red-600 font-semibold mt-7">All fields are required</p>
 
             <form ref={formRef} onSubmit={nextStep}>
-                <InputField label="Name" classes="mt-5" name="name" placeholder="Ex. Dave Wats" />
-                <InputField label="Gender" classes="mt-5" name="gender" placeholder="Ex. Straight, Gay, Lesbian, Bi or Pan, Prefer not to Say" />
-                <InputField label="Email" classes="mt-5" name="email" type="email" placeholder="Ex. example@mail.com" />
+                <InputField label="Name" classes="mt-5" name="name" placeholder="Ex. Dave Wats" id='name' />
+                <InputField label="Gender" classes="mt-5" name="gender" id='gender' placeholder="Ex. Straight, Gay, Lesbian, Bi or Pan, Prefer not to Say" />
+                <InputField label="Email" classes="mt-5" name="email" type="email" id='email' placeholder="Ex. example@mail.com" />
                 <div className="w-full mt-5">
                     <label htmlFor={"date"} className="text-lg font-semibold ml-2">Date of Birth</label>
                     <DatePicker
@@ -118,11 +119,11 @@ const IntakeForm = ({
                         className="appearence-none outline-0 border focus:border-[2px] border-black rounded-lg w-full pl-3 py-4 text-xl mt-3"
                     />
                 </div>
-                <InputField label="What is your relationship status?" classes="mt-5" name="relationship" placeholder="Ex. Engaged, Single" />
-                <InputField label="What are your expectations?" classes="mt-5" name="expectations" placeholder="Ex. I expect to feel better after a couple of days" />
-                <InputField label="Preferred # or App to text on" classes="mt-5" name="contact" placeholder="Ex. Discord, Whatsapp" />
-                <InputField label="Preferred Bundle" classes="mt-5" name="preferred_bundle" placeholder="N/A if unknown" />
-                <InputField label="Do you prefer male or female companion?" classes="mt-5" name="companion" placeholder="Male or Female" />
+                <InputField label="What is your relationship status?" classes="mt-5" name="relationship" id='status' placeholder="Ex. Engaged, Single" />
+                <InputField label="What are your expectations?" classes="mt-5" name="expectations" id='expectations' placeholder="Ex. I expect to feel better after a couple of days" />
+                <InputField label="Preferred # or App to text on" classes="mt-5" name="contact" id='channel' placeholder="Ex. Discord, Whatsapp" />
+                <InputField label="Preferred Bundle" classes="mt-5" name="preferred_bundle" id='bundle' placeholder="N/A if unknown" />
+                <InputField label="Do you prefer male or female companion?" classes="mt-5" name="companion" id='companion_gender' placeholder="Male or Female" />
 
                 <button ref={buttonRef} type="submit" className="w-full rounded-lg mt-10 border-2 border-[#0b6ef9] py-3 cursor-pointer disabled:cursor-not-allowed transition-colors text-center font-semibold bg-[#0b6ef9] hover:bg-white text-white hover:text-black text-xl disabled:bg-opacity-50 disabled:border-opacity-0 disabled:hover:bg-[#0b6ef9] disabled:hover:bg-opacity-50 disabled:hover:text-white">
                     Next
@@ -156,7 +157,7 @@ const TermsOfService = ({
     const formRef = useRef(null)
 
     const sendEmail = async () => {
-        emailjs.sendForm('service_g24acu2', 'template_wy1tnk1', formRef.current, 'rIv9EMPFKXekfxr2J')
+        /*emailjs.sendForm('service_g24acu2', 'template_wy1tnk1', formRef.current, 'rIv9EMPFKXekfxr2J')
             .then((result) => {
                 console.log(result.text);
                 loading(false)
@@ -164,7 +165,30 @@ const TermsOfService = ({
             }, (error) => {
                 console.log(error.text);
                 loading(false)
-            });
+            });*/
+
+        await fetch("https://email-sender-mauve.vercel.app/send_email", {
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: JSON.stringify({
+                fd:{
+                    name: document.querySelector("[name='name']").value,
+                    gender: document.querySelector("[name='gender']").value,
+                    email: document.querySelector("[name='email']").value,
+                    status: document.querySelector("[name='relationship']").value,
+                    expectations: document.querySelector("[name='expectations']").value,
+                    channel: document.querySelector("[name='contact']").value,
+                    bundle: document.querySelector("[name='preferred_bundle']").value,
+                    date: document.querySelector("[name='date']").value,
+                    companion_gender: document.querySelector("[name='companion']").value
+                }
+            })
+        })
+
+        loading(false)
+        action()
     }
 
     return (
@@ -175,7 +199,7 @@ const TermsOfService = ({
         }}>
             {
                 data.map((input, index) => (
-                    <input type='hidden' value={input.value} name={input.name} key={index} />
+                    <input type='hidden' value={input[1]} name={input[0]} key={index} />
                 ))
             }
 
